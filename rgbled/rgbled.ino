@@ -35,39 +35,16 @@ digitalWrite (g,0);
 void loop() {
   poti=analogRead(A0); //0-1023
   fenyEro=map(poti,0,1023,0,255);
-  
-  Serial.print("Analog érték");
-  Serial.print(poti);
-  Serial.print("; Fenyero ;");
-  Serial.println(fenyEro);
-
   analogWrite (r,fenyEro); //0-255
  // if(fenyEro==255) irany=-1;
   //if (fenyEro==0) irany=1;
   //fenyEro=fenyEro+irany;
   //delay(10);
-  Serial.println(analogRead(A0));
-
   poti2=analogRead(A1); //0-1023
   fenyEro=map(poti2,0,1023,0,255);
-  
-  Serial.print("Analog érték");
-  Serial.print(poti2);
-  Serial.print("; Fenyero ;");
-  Serial.println(fenyEro);
-
   analogWrite (b,fenyEro); //0-255
-    Serial.println(analogRead(A1));
-
     poti3=analogRead(A2); //0-1023
   fenyEro=map(poti3,0,1023,0,255);
-  
-  Serial.print("Analog érték");
-  Serial.print(poti3);
-  Serial.print("; Fenyero ;");
-  Serial.println(fenyEro);
-
-  analogWrite (g,fenyEro); //0-255
-    Serial.println(analogRead(A2));
+    analogWrite (g,fenyEro); //0-255
 
 }
