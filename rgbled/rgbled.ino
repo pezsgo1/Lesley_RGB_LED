@@ -7,6 +7,7 @@ int poti2=0;
 int poti3=0;
 byte fenyEro=0;
 byte irany=1;
+bool mukodik=true;
 void setup() {
   pinMode (r, OUTPUT);
 pinMode (b, OUTPUT);
@@ -35,6 +36,7 @@ digitalWrite (g,0);
 }
 
 void loop() {
+  if (mukodik){
   poti=analogRead(A0); //0-1023
   fenyEro=map(poti,0,1023,0,255);
   analogWrite (r,fenyEro); //0-255
@@ -48,11 +50,17 @@ void loop() {
     poti3=analogRead(A2); //0-1023
   fenyEro=map(poti3,0,1023,0,255);
     analogWrite (g,fenyEro); //0-255
-
-    if (digitalRead(gomb)==0)
+  }
+  else{
+    digitalWrite (r,0);
+digitalWrite (b,0);
+digitalWrite (g,0);}
+  
+  if (digitalRead(gomb)==0)
   { 
     delay(60);
     if (digitalRead(gomb)==0){
+      mukodik=!mukodik;
       Serial.println ("Magynomtak baszod");
     }
       }
