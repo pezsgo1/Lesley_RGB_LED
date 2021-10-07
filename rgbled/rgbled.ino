@@ -1,9 +1,17 @@
-int r=9;
+int g=9;
 int b=10;
-int g=11;
+int r=11;
 void setup() {
-  // put your setup code here, to run once:
-
+  pinMode (r, OUTPUT);
+pinMode (b, OUTPUT);
+pinMode (g, OUTPUT);
+digitalWrite (r,1);
+delay(1000);
+digitalWrite (r,0);
+digitalWrite (b,1);
+delay(1000);
+digitalWrite (r,1);
+digitalWrite (b,1);
 }
 
 void loop() {
