@@ -1,3 +1,4 @@
+int gomb=13;
 int g=9;
 int b=10;
 int r=11;
@@ -10,6 +11,7 @@ void setup() {
   pinMode (r, OUTPUT);
 pinMode (b, OUTPUT);
 pinMode (g, OUTPUT);
+pinMode (gomb, INPUT_PULLUP);
 
 pinMode (A0, INPUT);
 pinMode (A1, INPUT);
@@ -47,4 +49,11 @@ void loop() {
   fenyEro=map(poti3,0,1023,0,255);
     analogWrite (g,fenyEro); //0-255
 
-}
+    if (digitalRead(gomb)==0)
+  { 
+    delay(60);
+    if (digitalRead(gomb)==0){
+      Serial.println ("Magynomtak baszod");
+    }
+      }
+    }
